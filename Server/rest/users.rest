@@ -1,0 +1,44 @@
+@hostname = http://localhost
+@port = 9000
+@host = {{hostname}}:{{port}}
+
+### Obtener todos los Usuarios
+GET {{host}}/eatfit/users
+
+### Obtener los Usuarios por Id
+GET {{host}}/eatfit/users/6473aa19741cb64db2351d37
+
+### Crear un nuevo Usuario
+POST {{host}}/eatfit/signup
+Content-Type: application/json
+
+ {
+    "name": "Mercedes",
+    "lastname": "Fernandez Garcia",
+    "username": "Mercedes",
+    "password": "mercedes123",
+    "email": "mercedes@gmail.com"
+    }
+   
+### Logear a un Usuario
+POST {{host}}/eatfit/signin
+Content-Type: application/json
+
+{
+"username":"pizarra",
+"password":"pizarra123"
+}
+
+
+### Añadir producto a la wishlist
+POST {{host}}/eatfit/wishList
+Content-Type: application/json
+
+{
+
+"userId":"64733e323959c73f98de850a",
+"productId":"6471d221ad26d32f0cc84c3e"
+
+}
+
+

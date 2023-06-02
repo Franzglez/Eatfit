@@ -1,0 +1,35 @@
+@hostname = http://localhost
+@port = 9000
+@host = {{hostname}}:{{port}}
+GET {{host}}/eatfit/products
+Content-Type: application/json
+###
+POST {{host}}/eatfit/products/new
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWVyY2VkZXMiLCJ1c2VybmFtZSI6Ik1lcmNlZGVzIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjg1NDQyODAxfQ.eRkw1iZY0Mq5yR9rX7SE3xitfdSGEb5VUTsoWcRIBdk
+
+{
+    "titulo":"Creatina de Gozilla",
+    "descripcion": "Monohidrato de creatina en forma de polvo, que contribuye al aumento de la fuerza y ​​la potencia muscular.",
+    "precio": "90.00€",
+    "categoria": "Creatina"
+}
+###
+DELETE {{host}}/eatfit/products/6473a8d41cbf3e8d63ff3090
+
+###
+PUT {{host}}/eatfit/products/64710aa3a9bcc30b89a3aa72
+Content-Type: application/json
+
+{  
+    "categoria":"Proteinas"
+}
+
+### Obtener productos por categoria
+GET {{host}}/eatfit/products/Proteinas
+Content-Type: application/json
+
+
+### Obtener productos por id
+GET {{host}}/eatfit/products/search/6471de1daf11e39d2d3b0917
+Content-Type: application/json
